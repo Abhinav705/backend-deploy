@@ -7,7 +7,7 @@ pipeline {
         disableConcurrentBuilds()
         ansiColor('xterm')
     }
-    parameters {
+    parameters { //we should define params here, so that CI sends appversion here and it takes and prints
         string(name: 'appVersion', defaultValue: '1.0.0', description: 'What is the application version?')
     }
     environment{
@@ -35,7 +35,7 @@ pipeline {
         //         sh """
         //             pwd
         //             cd terraform
-        //             terraform plan -var="app_version=${params.appVersion}"
+        //             terraform plan -var="app_version=${params.appVersion}" //we will pass the app_version to terraform
         //         """
         //     }
         // }
