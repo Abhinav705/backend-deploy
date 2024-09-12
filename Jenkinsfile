@@ -35,7 +35,7 @@ pipeline {
                 sh """
                     pwd
                     cd terraform
-                    terraform plan -var="app_version=${params.appVersion}" //we will pass the app_version to terraform
+                    terraform plan -var="app_version=${params.appVersion}" 
                 """
             }
         }
