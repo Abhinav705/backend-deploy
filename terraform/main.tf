@@ -40,7 +40,7 @@ resource "null_resource" "backend" {
   provisioner "remote-exec" { #this will run the .sh script in remote server
         inline = [ #passing the arguments
             "chmod +x /tmp/${var.common_tags.Component}.sh", #giving execute perm for the backend.sh
-            "sudo sh /tmp/${var.common_tags.Component}.sh ${var.common_tags.Component} ${var.environment}"
+            "sudo sh /tmp/${var.common_tags.Component}.sh ${var.common_tags.Component} ${var.environment} ${var.app_version}"
             #giving sudo access and passing backend as param1 and environment as param2
             #for detailed clairty check backend.sh file
         ]
